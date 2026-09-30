@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Termos de Uso — donowl</title>
+<link rel="icon" href="assets/donowl_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .shell {
+    max-width: 1080px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 220px minmax(0,1fr);
+    gap: 40px;
+    padding-inline: 20px;
+    padding-block: 32px 64px;
+  }
+  @media (max-width: 860px) { .shell { grid-template-columns: 1fr; } }
+
+  nav.toc {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 13px;
+  }
+  @media (max-width: 860px) {
+    nav.toc {
+      position: static;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      background: var(--surface);
+      margin-bottom: 8px;
+    }
+  }
+  nav.toc .toc-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  nav.toc a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 7px;
+    line-height: 1.35;
+  }
+  nav.toc a:hover { color: var(--accent-strong); background: var(--accent-soft); }
+
+  main { min-width: 0; }
+
+  .doc-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 38px);
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -.01em;
+  }
+  .meta { font-size: 13px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+
+  .draft-banner {
+    display: flex;
+    gap: 10px;
+    background: #FBEFE1;
+    border: 1px solid #E9C892;
+    color: #6B4A16;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 32px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .draft-banner {
+      background: #332711; border-color: #5C4620; color: #E8C88A;
+    }
+  }
+  .draft-banner b { font-weight: 700; }
+
+  section { margin-bottom: 34px; }
+  section h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    scroll-margin-top: 20px;
+  }
+  section h2 .num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--accent); font-weight: 600; }
+  section h3 { font-size: 15.5px; font-weight: 700; margin: 18px 0 6px; color: var(--ink); }
+  p, li { max-width: 66ch; font-size: 15px; line-height: 1.68; color: var(--ink); }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 0 0 12px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  strong { font-weight: 700; }
+  .placeholder {
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  a.inline { color: var(--accent-strong); }
+  footer.doc-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="/">
+    <img src="assets/donowl_logo.png" alt="donowl">
+    <span>donowl</span>
+  </a>
+  <nav class="site-nav">
+    <a href="termos-de-uso.html">Termos de Uso</a>
+    <a href="politica-de-privacidade.html">Privacidade</a>
+  </nav>
+</header>
+
+<div class="shell">
+  <nav class="toc">
+    <div class="toc-label">Sumário</div>
+    <a href="#objeto">1. Objeto</a>
+    <a href="#cadastro">2. Cadastro e conta</a>
+    <a href="#papel">3. Papel da plataforma</a>
+    <a href="#professores">4. Cadastro de professores</a>
+    <a href="#agendamento">5. Agendamento e preços</a>
+    <a href="#pagamento">6. Pagamento</a>
+    <a href="#cancelamento">7. Cancelamento e reembolso</a>
+    <a href="#assinaturas">8. Pacotes, planos e assinatura de plataforma</a>
+    <a href="#conduta">9. Conduta do usuário</a>
+    <a href="#avaliacoes">10. Avaliações</a>
+    <a href="#propriedade">11. Propriedade intelectual</a>
+    <a href="#responsabilidade">12. Limitação de responsabilidade</a>
+    <a href="#encerramento">13. Suspensão e encerramento</a>
+    <a href="#alteracoes">14. Alterações destes termos</a>
+    <a href="#geral">15. Disposições gerais</a>
+    <a href="#contato">16. Contato</a>
+  </nav>
+
+  <main>
+    <div class="doc-header">
+      <div class="eyebrow">donowl</div>
+      <h1>Termos de Uso</h1>
+      <div class="meta">Versão <span class="placeholder">2026-09-10</span> · vigente a partir da data de publicação</div>
+    </div>
+
+    <div class="draft-banner">
+      <span>⚠</span>
+      <span><b>Rascunho para revisão.</b> Este texto foi redigido para servir de ponto de partida e ainda não passou por revisão jurídica. Os trechos marcados como <span class="placeholder">[a definir]</span> precisam ser preenchidos antes da publicação — em especial a razão social e o CNPJ do donowl, que ainda não foram constituídos. Recomenda-se revisão por advogado antes de publicar esta página.</span>
+    </div>
+
+    <section id="objeto">
+      <h2><span class="num">1</span> Objeto</h2>
+      <p>O donowl é uma plataforma digital (aplicativo e, futuramente, site) que conecta alunos a professores e estabelecimentos de atividades físicas, esportivas e de bem-estar — como musculação, corrida, yoga, pilates e modalidades correlatas —, permitindo a busca, o agendamento e o pagamento de aulas, pacotes de créditos e assinaturas recorrentes.</p>
+      <p>Estes Termos de Uso regem o acesso e o uso do donowl por qualquer pessoa que crie uma conta na plataforma, seja como aluno, seja como professor ou estabelecimento parceiro (em conjunto, "usuários"). Ao criar uma conta, o usuário declara que leu, compreendeu e concorda integralmente com este documento e com a <a class="inline" href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
+    </section>
+
+    <section id="cadastro">
+      <h2><span class="num">2</span> Cadastro e conta</h2>
+      <p>O uso do donowl é restrito a pessoas com <strong>18 anos ou mais</strong>, plenamente capazes de contratar. Ao se cadastrar, o usuário se compromete a fornecer informações verdadeiras, completas e atualizadas, sendo o único responsável pela exatidão dos dados informados.</p>
+      <p>A conta é pessoal e intransferível. O usuário é responsável por manter a confidencialidade de sua senha e por todas as atividades realizadas em sua conta. Qualquer suspeita de uso não autorizado deve ser comunicada imediatamente ao donowl.</p>
+      <p>O usuário pode solicitar a exclusão da própria conta a qualquer momento, diretamente no aplicativo (Perfil → Configurações → Excluir minha conta). Os efeitos dessa exclusão — que anonimiza os dados pessoais mas preserva o histórico de aulas, pagamentos e avaliações já realizados, sem identificar o usuário — estão detalhados na Política de Privacidade.</p>
+    </section>
+
+    <section id="papel">
+      <h2><span class="num">3</span> Papel da plataforma</h2>
+      <p>O donowl atua exclusivamente como <strong>intermediador</strong> entre alunos e professores/estabelecimentos. Os professores e estabelecimentos cadastrados são profissionais autônomos ou pessoas jurídicas independentes, não havendo entre eles e o donowl qualquer vínculo de emprego, representação, sociedade ou parceria comercial além do previsto nestes Termos.</p>
+      <p>O donowl não presta, por si, nenhum serviço de aula, treinamento ou orientação física — esses serviços são de responsabilidade exclusiva do professor ou estabelecimento que o aluno contratar através da plataforma.</p>
+    </section>
+
+    <section id="professores">
+      <h2><span class="num">4</span> Cadastro de professores e estabelecimentos</h2>
+      <p>Professores (pessoa física) e estabelecimentos (pessoa jurídica) que desejam oferecer aulas pelo donowl passam por um processo de aprovação de cadastro, que pode incluir o envio de documento de identidade, CNPJ e, quando a modalidade exigir, registro profissional válido perante o conselho de classe competente (ex.: CREF para educação física).</p>
+      <p>É de responsabilidade do professor/estabelecimento manter seus documentos e registros profissionais válidos e em dia. O donowl se reserva o direito de suspender ou recusar o cadastro que não atenda a essa exigência, e de bloquear o agendamento de modalidades que dependam de registro profissional enquanto ele não estiver aprovado.</p>
+      <p>O donowl não audita nem garante, de forma contínua, a qualificação técnica, a conduta ou a idoneidade dos professores/estabelecimentos cadastrados além da verificação documental descrita acima.</p>
+    </section>
+
+    <section id="agendamento">
+      <h2><span class="num">5</span> Agendamento e preços</h2>
+      <p>Os preços das aulas são definidos livremente por cada professor/estabelecimento, por modalidade. O valor exibido ao aluno no momento do agendamento é o valor efetivamente cobrado — o donowl não altera o preço definido pelo profissional.</p>
+      <p>Ao agendar, o aluno reserva automaticamente o horário escolhido dentro da disponibilidade informada pelo professor; não há etapa de confirmação manual pelo professor. O agendamento só é efetivado após o pagamento (ou, quando aplicável, após o débito de um crédito de pacote já adquirido).</p>
+    </section>
+
+    <section id="pagamento">
+      <h2><span class="num">6</span> Pagamento</h2>
+      <p>Os pagamentos são processados por meio de provedor de pagamentos terceirizado (atualmente, Stripe). O donowl não tem acesso aos dados completos do cartão de pagamento do usuário — essas informações são tratadas diretamente pelo provedor, conforme sua própria política de segurança e privacidade.</p>
+      <p>Sobre o valor da aula incide uma <strong>taxa de serviço</strong> paga pelo aluno, cujo percentual vigente é informado antes da confirmação do pagamento e pode ser ajustado pelo donowl a qualquer momento, valendo apenas para agendamentos futuros.</p>
+      <p>O donowl retém uma comissão sobre o valor recebido pelo professor/estabelecimento, salvo quando este optar pela assinatura de plataforma descrita no item 8.3, hipótese em que fica isento dessa comissão enquanto a assinatura estiver ativa. O valor repassado ao professor é depositado diretamente em sua conta vinculada ao provedor de pagamentos.</p>
+    </section>
+
+    <section id="cancelamento">
+      <h2><span class="num">7</span> Cancelamento e reembolso</h2>
+      <p>Uma aula paga pode ser cancelada tanto pelo aluno quanto pelo professor, a qualquer momento antes da data e horário agendados, diretamente pelo aplicativo.</p>
+      <h3>7.1 Cancelamento pelo professor</h3>
+      <p>Quando o cancelamento é feito pelo professor, o valor pago é <strong>integralmente estornado</strong> ao aluno, independentemente da proximidade da data da aula.</p>
+      <h3>7.2 Cancelamento pelo aluno</h3>
+      <p>Quando o cancelamento é feito pelo aluno com antecedência mínima de <span class="placeholder">24 horas</span> em relação ao horário agendado, o valor pago é integralmente estornado. Cancelamentos feitos com menos dessa antecedência têm direito a estorno de <span class="placeholder">50%</span> do valor pago — o restante é retido como compensação ao professor pelo horário reservado e não disponibilizado a outro aluno a tempo. Esses percentuais e prazos podem ser ajustados pelo donowl, valendo apenas para agendamentos futuros.</p>
+      <p>Aulas pagas com crédito de pacote ou geradas automaticamente por uma assinatura de plano têm regras próprias, descritas no item 8.</p>
+    </section>
+
+    <section id="assinaturas">
+      <h2><span class="num">8</span> Pacotes, planos e assinatura de plataforma</h2>
+      <h3>8.1 Pacotes de créditos</h3>
+      <p>Professores podem oferecer pacotes de créditos pré-pagos, utilizáveis em aulas futuras com o mesmo professor. O cancelamento de uma aula paga com crédito de pacote devolve o crédito ao saldo do aluno, sem gerar estorno financeiro adicional (o pagamento já foi feito, de uma vez, na compra do pacote).</p>
+      <h3>8.2 Planos de assinatura (aulas recorrentes)</h3>
+      <p>Professores podem oferecer planos de assinatura recorrente (mensal, trimestral, semestral ou anual), que reservam um ou mais horários fixos semanais até que o aluno cancele. O cancelamento do plano é gracioso: o aluno mantém o acesso até o fim do período já pago, sem nova cobrança depois disso. O cancelamento de uma sessão isolada dentro do período não afeta a cobrança da assinatura — a reposição fica a critério do professor.</p>
+      <h3>8.3 Assinatura de plataforma (professores e estabelecimentos)</h3>
+      <p>Como alternativa à comissão percentual descrita no item 6, o professor/estabelecimento pode optar por pagar um valor fixo mensal diretamente ao donowl, ficando isento da comissão percentual em todas as aulas, pacotes e planos vendidos enquanto a assinatura estiver ativa. A taxa de serviço paga pelo aluno não é afetada por essa opção. O cancelamento dessa assinatura também é gracioso.</p>
+      <h3>8.4 Primeira aula grátis</h3>
+      <p>Professores podem, a seu critério, oferecer a primeira aula gratuita para cada novo aluno, por modalidade. Esse benefício é único por par aluno-professor: um mesmo aluno não pode utilizá-lo mais de uma vez com o mesmo professor. O cancelamento de uma aula gratuita não consome o benefício, que continua disponível para uso futuro.</p>
+    </section>
+
+    <section id="conduta">
+      <h2><span class="num">9</span> Conduta do usuário</h2>
+      <p>Ao usar o donowl, o usuário se compromete a:</p>
+      <ul>
+        <li>Não utilizar a plataforma para fins ilícitos, fraudulentos ou que violem direitos de terceiros;</li>
+        <li>Não tentar contornar os mecanismos de pagamento da plataforma para negociar diretamente com a outra parte fora do aplicativo;</li>
+        <li>Tratar professores, alunos e demais usuários com respeito, na comunicação pelo chat interno e nos encontros presenciais decorrentes de um agendamento;</li>
+        <li>Não publicar avaliações falsas, ofensivas ou que não correspondam a uma experiência real na plataforma.</li>
+      </ul>
+      <p>O descumprimento destas regras pode levar à suspensão ou ao cancelamento da conta, conforme o item 13.</p>
+    </section>
+
+    <section id="avaliacoes">
+      <h2><span class="num">10</span> Avaliações</h2>
+      <p>Após uma aula ser marcada como concluída pelo professor, o aluno pode avaliar a experiência publicamente. Avaliações denunciadas por outros usuários passam por moderação e podem ser removidas a critério do donowl, especialmente quando identificado conteúdo ofensivo, falso ou que viole estes Termos.</p>
+    </section>
+
+    <section id="propriedade">
+      <h2><span class="num">11</span> Propriedade intelectual</h2>
+      <p>A marca donowl, o aplicativo, seu design, código-fonte e demais elementos de propriedade intelectual pertencem ao donowl e não podem ser copiados, reproduzidos ou utilizados sem autorização prévia por escrito.</p>
+    </section>
+
+    <section id="responsabilidade">
+      <h2><span class="num">12</span> Limitação de responsabilidade</h2>
+      <p>O donowl não é responsável pela qualidade técnica, segurança, adequação ou pelo resultado das aulas e serviços prestados pelos professores/estabelecimentos cadastrados, tampouco por eventuais lesões, danos materiais ou morais decorrentes da prática das atividades contratadas através da plataforma. A responsabilidade pela prestação do serviço é integralmente do professor/estabelecimento contratado.</p>
+      <p>O donowl também não se responsabiliza por indisponibilidades temporárias da plataforma decorrentes de manutenção, falhas de terceiros (incluindo o provedor de pagamentos) ou eventos fora de seu controle razoável.</p>
+    </section>
+
+    <section id="encerramento">
+      <h2><span class="num">13</span> Suspensão e encerramento</h2>
+      <p>O donowl pode suspender ou encerrar a conta de um usuário que viole estes Termos, mediante aviso prévio sempre que possível, sem prejuízo das aulas e pagamentos já concluídos antes da suspensão.</p>
+    </section>
+
+    <section id="alteracoes">
+      <h2><span class="num">14</span> Alterações destes termos</h2>
+      <p>Estes Termos podem ser atualizados periodicamente. Alterações relevantes exigem novo aceite do usuário antes de continuar utilizando a plataforma; a versão vigente é sempre identificada pela data indicada no topo desta página.</p>
+    </section>
+
+    <section id="geral">
+      <h2><span class="num">15</span> Disposições gerais</h2>
+      <p>Este documento é regido pelas leis da República Federativa do Brasil, incluindo, no que couber, o Código de Defesa do Consumidor (Lei nº 8.078/1990) e a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Fica eleito o foro da comarca de <span class="placeholder">[cidade/UF a definir]</span> para dirimir eventuais controvérsias, com renúncia a qualquer outro, por mais privilegiado que seja.</p>
+    </section>
+
+    <section id="contato">
+      <h2><span class="num">16</span> Contato</h2>
+      <p>Dúvidas sobre estes Termos podem ser enviadas para <strong>contato@donowl.com</strong>.</p>
+    </section>
+
+    <footer class="doc-footer">
+      <span class="placeholder">[Razão social a definir]</span>, inscrita no CNPJ sob o nº <span class="placeholder">[a definir]</span>.
+    </footer>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <span>© 2026 donowl</span>
+  <nav>
+    <a href="termos-de-uso.html">Termos de Uso</a>
+    <a href="politica-de-privacidade.html">Política de Privacidade</a>
+    <a href="mailto:contato@donowl.com">contato@donowl.com</a>
+  </nav>
+</footer>
+
+</body>
+</html>

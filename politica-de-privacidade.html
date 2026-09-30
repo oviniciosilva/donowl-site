@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Política de Privacidade — donowl</title>
+<link rel="icon" href="assets/donowl_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .shell {
+    max-width: 1080px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 220px minmax(0,1fr);
+    gap: 40px;
+    padding-inline: 20px;
+    padding-block: 32px 64px;
+  }
+  @media (max-width: 860px) { .shell { grid-template-columns: 1fr; } }
+
+  nav.toc {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 13px;
+  }
+  @media (max-width: 860px) {
+    nav.toc {
+      position: static;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      background: var(--surface);
+      margin-bottom: 8px;
+    }
+  }
+  nav.toc .toc-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  nav.toc a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 7px;
+    line-height: 1.35;
+  }
+  nav.toc a:hover { color: var(--accent-strong); background: var(--accent-soft); }
+
+  main { min-width: 0; }
+
+  .doc-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 38px);
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -.01em;
+  }
+  .meta { font-size: 13px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+
+  .draft-banner {
+    display: flex;
+    gap: 10px;
+    background: #FBEFE1;
+    border: 1px solid #E9C892;
+    color: #6B4A16;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 32px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .draft-banner {
+      background: #332711; border-color: #5C4620; color: #E8C88A;
+    }
+  }
+  .draft-banner b { font-weight: 700; }
+
+  section { margin-bottom: 34px; }
+  section h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    scroll-margin-top: 20px;
+  }
+  section h2 .num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--accent); font-weight: 600; }
+  section h3 { font-size: 15.5px; font-weight: 700; margin: 18px 0 6px; color: var(--ink); }
+  p, li { max-width: 66ch; font-size: 15px; line-height: 1.68; color: var(--ink); }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 0 0 12px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  strong { font-weight: 700; }
+  .placeholder {
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  a.inline { color: var(--accent-strong); }
+
+  .table-wrap { overflow-x: auto; margin: 14px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 13.5px; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin: 14px 0;
+  }
+
+  footer.doc-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="/">
+    <img src="assets/donowl_logo.png" alt="donowl">
+    <span>donowl</span>
+  </a>
+  <nav class="site-nav">
+    <a href="termos-de-uso.html">Termos de Uso</a>
+    <a href="politica-de-privacidade.html">Privacidade</a>
+  </nav>
+</header>
+
+<div class="shell">
+  <nav class="toc">
+    <div class="toc-label">Sumário</div>
+    <a href="#controlador">1. Controlador dos dados</a>
+    <a href="#dados">2. Dados que coletamos</a>
+    <a href="#finalidade">3. Para que usamos seus dados</a>
+    <a href="#base-legal">4. Base legal</a>
+    <a href="#compartilhamento">5. Compartilhamento de dados</a>
+    <a href="#armazenamento">6. Armazenamento e segurança</a>
+    <a href="#retencao">7. Por quanto tempo guardamos</a>
+    <a href="#direitos">8. Seus direitos</a>
+    <a href="#exclusao">9. Exclusão de conta</a>
+    <a href="#cookies">10. Cookies e dados de uso</a>
+    <a href="#menores">11. Menores de idade</a>
+    <a href="#alteracoes">12. Alterações desta política</a>
+    <a href="#contato">13. Contato e encarregado</a>
+  </nav>
+
+  <main>
+    <div class="doc-header">
+      <div class="eyebrow">donowl</div>
+      <h1>Política de Privacidade</h1>
+      <div class="meta">Versão <span class="placeholder">2026-09-10</span> · vigente a partir da data de publicação</div>
+    </div>
+
+    <div class="draft-banner">
+      <span>⚠</span>
+      <span><b>Rascunho para revisão.</b> Este texto foi redigido para servir de ponto de partida e ainda não passou por revisão jurídica. Os trechos marcados como <span class="placeholder">[a definir]</span> precisam ser preenchidos antes da publicação — em especial a razão social, o CNPJ e o contato do encarregado de dados (DPO), que ainda não foram definidos. Recomenda-se revisão por advogado especializado em LGPD antes de publicar esta página.</span>
+    </div>
+
+    <section id="controlador">
+      <h2><span class="num">1</span> Controlador dos dados</h2>
+      <p>Esta Política de Privacidade descreve como o donowl coleta, usa, armazena e protege os dados pessoais dos usuários do aplicativo, em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD).</p>
+      <p>O controlador dos dados tratados por meio do donowl é <span class="placeholder">[Razão social a definir]</span>, inscrita no CNPJ sob o nº <span class="placeholder">[a definir]</span>.</p>
+    </section>
+
+    <section id="dados">
+      <h2><span class="num">2</span> Dados que coletamos</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Categoria</th><th>Exemplos</th><th>Quem fornece</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dados de cadastro</td>
+              <td>Nome completo, e-mail, telefone, gênero, data de nascimento, cidade, foto de perfil</td>
+              <td>Todos os usuários</td>
+            </tr>
+            <tr>
+              <td>Localização</td>
+              <td>Coordenadas geográficas (para busca por proximidade e definição de raio de atendimento)</td>
+              <td>Alunos e professores, com permissão do aparelho</td>
+            </tr>
+            <tr>
+              <td>Documentos de verificação</td>
+              <td>CPF ou CNPJ, nome fantasia, número de registro profissional (ex.: CREF), documento de identidade e comprovantes enviados para aprovação de cadastro</td>
+              <td>Professores e estabelecimentos</td>
+            </tr>
+            <tr>
+              <td>Dados de pagamento</td>
+              <td>Histórico de transações, valores pagos/recebidos. Os dados do cartão em si são tratados diretamente pelo provedor de pagamentos (Stripe), nunca armazenados pelo donowl</td>
+              <td>Alunos (pagamento) e professores (recebimento)</td>
+            </tr>
+            <tr>
+              <td>Uso da plataforma</td>
+              <td>Aulas agendadas, mensagens trocadas no chat interno, avaliações publicadas, notificações recebidas</td>
+              <td>Gerado pelo uso do app</td>
+            </tr>
+            <tr>
+              <td>Dados de dispositivo</td>
+              <td>Identificador do aparelho para envio de notificações push</td>
+              <td>Gerado automaticamente</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="finalidade">
+      <h2><span class="num">3</span> Para que usamos seus dados</h2>
+      <ul>
+        <li>Viabilizar o cadastro, a busca, o agendamento e o pagamento de aulas entre alunos e professores/estabelecimentos;</li>
+        <li>Processar pagamentos e repasses através do provedor de pagamentos;</li>
+        <li>Verificar a identidade e os registros profissionais de professores/estabelecimentos antes de liberar o cadastro;</li>
+        <li>Enviar notificações relacionadas a aulas, mensagens e pagamentos;</li>
+        <li>Prevenir fraudes e abusos da plataforma;</li>
+        <li>Cumprir obrigações legais e fiscais, incluindo a guarda de registros de transações financeiras pelo prazo exigido pela legislação aplicável;</li>
+        <li>Responder a dúvidas e solicitações enviadas ao suporte.</li>
+      </ul>
+      <p>O donowl não vende dados pessoais a terceiros.</p>
+    </section>
+
+    <section id="base-legal">
+      <h2><span class="num">4</span> Base legal</h2>
+      <p>O tratamento de dados pessoais pelo donowl se apoia, conforme o caso, nas seguintes bases legais previstas na LGPD: execução de contrato (viabilizar o serviço que o usuário contratou ao se cadastrar), cumprimento de obrigação legal ou regulatória (ex.: guarda de registros fiscais), legítimo interesse (ex.: prevenção a fraudes) e, quando aplicável, consentimento do titular (ex.: acesso à localização do aparelho).</p>
+    </section>
+
+    <section id="compartilhamento">
+      <h2><span class="num">5</span> Compartilhamento de dados</h2>
+      <p>Entre aluno e professor, compartilhamos apenas o necessário para a prestação do serviço agendado — nome e foto de perfil, por exemplo. Documentos de verificação (CPF/CNPJ, CREF, identidade) não são exibidos a outros usuários, apenas utilizados internamente para aprovação de cadastro.</p>
+      <p>Compartilhamos dados de pagamento com o provedor de pagamentos (Stripe), estritamente para processar transações e repasses. Podemos também compartilhar dados quando exigido por lei, ordem judicial ou autoridade competente.</p>
+    </section>
+
+    <section id="armazenamento">
+      <h2><span class="num">6</span> Armazenamento e segurança</h2>
+      <p>Os dados são armazenados em infraestrutura de nuvem (Supabase), com controle de acesso em nível de linha (cada usuário só acessa os dados aos quais tem permissão) e comunicação criptografada entre o aplicativo e os servidores. Nenhum sistema é 100% livre de risco, mas adotamos medidas técnicas e organizacionais razoáveis para proteger os dados contra acesso não autorizado, perda ou vazamento.</p>
+    </section>
+
+    <section id="retencao">
+      <h2><span class="num">7</span> Por quanto tempo guardamos seus dados</h2>
+      <p>Mantemos os dados pessoais enquanto a conta estiver ativa. Após a exclusão da conta (ver item 9), os dados pessoais identificáveis são removidos ou anonimizados; registros de transações (aulas, pagamentos, avaliações) são preservados, sem identificar o titular, pelo prazo necessário para cumprir obrigações legais e fiscais e para preservar o histórico legítimo da outra parte envolvida na transação.</p>
+    </section>
+
+    <section id="direitos">
+      <h2><span class="num">8</span> Seus direitos</h2>
+      <p>Nos termos da LGPD, o titular dos dados pode solicitar, a qualquer momento:</p>
+      <ul>
+        <li>Confirmação da existência de tratamento e acesso aos dados;</li>
+        <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+        <li>Anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade com a lei;</li>
+        <li>Portabilidade dos dados a outro fornecedor de serviço;</li>
+        <li>Eliminação dos dados tratados com base no consentimento do titular;</li>
+        <li>Informação sobre com quem os dados são compartilhados;</li>
+        <li>Revogação do consentimento, quando o tratamento for baseado nele.</li>
+      </ul>
+      <p>A maioria desses pedidos pode ser resolvida diretamente no aplicativo (edição de perfil, exclusão de conta). Para os demais, entre em contato pelos canais do item 13.</p>
+    </section>
+
+    <section id="exclusao">
+      <h2><span class="num">9</span> Exclusão de conta</h2>
+      <p>O donowl oferece um fluxo de autoatendimento para exclusão de conta (Perfil → Configurações → Excluir minha conta). Ao ser solicitada, a exclusão:</p>
+      <ul>
+        <li>Remove nome, foto de perfil, telefone, gênero, data de nascimento e documentos de verificação enviados;</li>
+        <li>Desativa o acesso à conta (login);</li>
+        <li>Preserva, sem identificar o titular, o histórico de aulas, pagamentos e avaliações já realizados — necessário para manter os registros fiscais da plataforma e a integridade do histórico da outra parte envolvida em cada transação (por exemplo, a avaliação recebida por um professor não desaparece quando o aluno que a escreveu exclui a própria conta).</li>
+      </ul>
+      <p>A exclusão pode ser temporariamente bloqueada caso existam pendências ativas na conta — por exemplo, uma aula paga agendada para o futuro, uma assinatura de plano ou de plataforma ainda ativa, ou créditos de pacote ainda não utilizados. Nesses casos, o aplicativo informa exatamente quais pendências precisam ser resolvidas antes da exclusão.</p>
+      <div class="callout">Isso é diferente de um simples <em>apagar tudo</em>: como o donowl processa pagamentos reais entre pessoas, remover completamente o histórico de uma transação prejudicaria a outra parte envolvida nela (o professor perderia o registro da aula que deu, por exemplo) e poderia descumprir a obrigação legal de manter registros fiscais por um determinado período.</div>
+    </section>
+
+    <section id="cookies">
+      <h2><span class="num">10</span> Cookies e dados de uso</h2>
+      <p><span class="placeholder">[a definir]</span> — esta seção deve ser complementada caso o donowl passe a usar cookies, pixels de rastreamento ou ferramentas de analytics (no site ou no aplicativo), descrevendo quais ferramentas são usadas e como o usuário pode gerenciar suas preferências.</p>
+    </section>
+
+    <section id="menores">
+      <h2><span class="num">11</span> Menores de idade</h2>
+      <p>O donowl é destinado a maiores de 18 anos. Não coletamos intencionalmente dados de menores de idade. Caso identifiquemos uma conta cadastrada por um menor, ela poderá ser suspensa até a regularização ou exclusão dos dados.</p>
+    </section>
+
+    <section id="alteracoes">
+      <h2><span class="num">12</span> Alterações desta política</h2>
+      <p>Esta política pode ser atualizada periodicamente para refletir mudanças no funcionamento da plataforma ou na legislação aplicável. A versão vigente é sempre identificada pela data indicada no topo desta página; alterações relevantes podem exigir novo aceite do usuário.</p>
+    </section>
+
+    <section id="contato">
+      <h2><span class="num">13</span> Contato e encarregado</h2>
+      <p>Dúvidas, solicitações ou reclamações sobre o tratamento de dados pessoais podem ser enviadas para <strong>contato@donowl.com</strong>.</p>
+      <p>Encarregado pelo tratamento de dados (DPO): <span class="placeholder">[nome e contato a definir]</span>.</p>
+    </section>
+
+    <footer class="doc-footer">
+      <span class="placeholder">[Razão social a definir]</span>, inscrita no CNPJ sob o nº <span class="placeholder">[a definir]</span>.
+    </footer>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <span>© 2026 donowl</span>
+  <nav>
+    <a href="termos-de-uso.html">Termos de Uso</a>
+    <a href="politica-de-privacidade.html">Política de Privacidade</a>
+    <a href="mailto:contato@donowl.com">contato@donowl.com</a>
+  </nav>
+</footer>
+
+</body>
+</html>

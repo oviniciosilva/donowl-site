@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>donowl — encontre professores de esporte e bem-estar</title>
+<meta name="description" content="O donowl conecta você a professores de musculação, yoga, corrida e outras modalidades perto de você. Agende e pague pelo aplicativo.">
+<link rel="icon" href="assets/donowl_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .hero {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 20px 40px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (max-width: 780px) {
+    .hero { grid-template-columns: 1fr; padding-top: 36px; }
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.12;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .lead {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 0 32px;
+  }
+  .store-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .store-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 18px;
+    border-radius: 12px;
+    background: var(--ink);
+    color: var(--bg);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    opacity: .55;
+    cursor: default;
+  }
+  .store-button svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .store-button .label {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+  }
+  .store-button .label small {
+    font-size: 10.5px;
+    font-weight: 500;
+    opacity: .8;
+  }
+  .soon-badge {
+    position: absolute;
+    top: -9px;
+    right: -8px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    padding: 3px 7px;
+    border-radius: 999px;
+    text-transform: uppercase;
+  }
+  .hero-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 14px;
+    min-height: 260px;
+  }
+  .hero-card img { height: 84px; width: 84px; object-fit: contain; }
+  .hero-card p { margin: 0; color: var(--ink-muted); font-size: 14px; max-width: 30ch; }
+
+  .features {
+    max-width: 1080px;
+    margin: 20px auto 0;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 780px) {
+    .features { grid-template-columns: 1fr; }
+  }
+  .feature {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+  }
+  .feature .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+  .feature h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    margin: 0 0 8px;
+  }
+  .feature p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="/">
+    <img src="assets/donowl_logo.png" alt="donowl">
+    <span>donowl</span>
+  </a>
+  <nav class="site-nav">
+    <a href="termos-de-uso.html">Termos de Uso</a>
+    <a href="politica-de-privacidade.html">Privacidade</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Musculação · Yoga · Corrida · e muito mais</div>
+    <h1>Encontre o professor certo pra treinar do seu jeito.</h1>
+    <p class="lead">O donowl conecta você a professores de atividades físicas e bem-estar perto de você. Busque, agende e pague pelo aplicativo — sem burocracia.</p>
+    <div class="store-buttons">
+      <span class="store-button" aria-disabled="true">
+        <span class="soon-badge">Em breve</span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17.03 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.5 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.27-2.15 3.79.03 3.02 2.65 4.02 2.68 4.03-.02.07-.42 1.44-1.38 2.85zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span class="label"><small>Baixar na</small>App Store</span>
+      </span>
+      <span class="store-button" aria-disabled="true">
+        <span class="soon-badge">Em breve</span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.4c-.34.2-.6.6-.6 1.1v17c0 .5.26.9.6 1.1l9.75-9.6L3.6 2.4zm12.2 9.6l2.8-2.75 4.1 2.35c.7.4.7 1.4 0 1.8l-4.1 2.35-2.8-2.75.85-.5-.85-.5zm-1.3-1.3L4.3 1.7l9.4 5.4 2.0-2zM4.3 22.3l9.4-5.4 2.0 2z"/></svg>
+        <span class="label"><small>Disponível no</small>Google Play</span>
+      </span>
+    </div>
+  </div>
+  <div class="hero-card">
+    <img src="assets/donowl_logo.png" alt="">
+    <p>App em fase final de lançamento — os links das lojas aparecem aqui assim que a publicação sair do ar.</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <div class="icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    </div>
+    <h3>Busque por modalidade</h3>
+    <p>Filtre por musculação, corrida, yoga, natação e outras modalidades, perto de você ou na sua região preferida.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    </div>
+    <h3>Agende na hora</h3>
+    <p>Veja a agenda real do professor e reserve o horário que funciona pra você, direto pelo app.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+    </div>
+    <h3>Pague com segurança</h3>
+    <p>Pagamento processado com segurança dentro do app — sem precisar levar dinheiro ou combinar por fora.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span>© 2026 donowl</span>
+  <nav>
+    <a href="termos-de-uso.html">Termos de Uso</a>
+    <a href="politica-de-privacidade.html">Política de Privacidade</a>
+    <a href="mailto:contato@donowl.com">contato@donowl.com</a>
+  </nav>
+</footer>
+
+</body>
+</html>
