@@ -118,7 +118,8 @@
   }
   section h2 .num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--accent); font-weight: 600; }
   section h3 { font-size: 15.5px; font-weight: 700; margin: 18px 0 6px; color: var(--ink); }
-  p, li { max-width: 66ch; font-size: 15px; line-height: 1.68; color: var(--ink); }
+  p, li { font-size: 15px; line-height: 1.68; color: var(--ink); hyphens: auto; }
+  @media (min-width: 861px) { p, li { text-align: justify; } }
   p { margin: 0 0 12px; }
   ul, ol { margin: 0 0 12px; padding-left: 22px; }
   li { margin-bottom: 6px; }
@@ -205,12 +206,7 @@
     <div class="doc-header">
       <div class="eyebrow">donowl</div>
       <h1>Política de Privacidade</h1>
-      <div class="meta">Versão <span class="placeholder">2026-09-10</span> · vigente a partir da data de publicação</div>
-    </div>
-
-    <div class="draft-banner">
-      <span>⚠</span>
-      <span><b>Rascunho para revisão.</b> Este texto foi redigido para servir de ponto de partida e ainda não passou por revisão jurídica. Os trechos marcados como <span class="placeholder">[a definir]</span> precisam ser preenchidos antes da publicação. Recomenda-se revisão por advogado especializado em LGPD antes de publicar esta página.</span>
+      <div class="meta">Versão 2026-11-11 · vigente a partir da data de publicação</div>
     </div>
 
     <section id="controlador">
@@ -290,6 +286,7 @@
       <h2><span class="num">5</span> Compartilhamento de dados</h2>
       <p>Entre cliente e profissional, compartilhamos apenas o necessário para a prestação do serviço agendado — nome e foto de perfil, por exemplo. Documentos de verificação (CPF/CNPJ, CREF, identidade) não são exibidos a outros usuários, apenas utilizados internamente para aprovação de cadastro.</p>
       <p>Compartilhamos dados de pagamento com o provedor de pagamentos (Pagar.me, do grupo Stone), estritamente para processar transações, divisão de valores entre profissional e donowl, estornos e saques. Para profissionais e estabelecimentos, o provedor atua também como controlador dos dados de cadastro de recebimento e da verificação de identidade (inclusive biometria facial, dado pessoal sensível), que ele trata conforme sua própria política. O tratamento desses dados pelo provedor segue a <a href="https://jornada.stone.com.br/politica-de-privacidade">política de privacidade da Stone</a>. Podemos também compartilhar dados quando exigido por lei, ordem judicial ou autoridade competente.</p>
+      <p>Usamos também prestadores de serviço de infraestrutura e comunicação, como o envio de e-mails, que tratam dados em nosso nome e apenas para essa finalidade.</p>
     </section>
 
     <section id="armazenamento">
@@ -319,7 +316,7 @@
 
     <section id="exclusao">
       <h2><span class="num">9</span> Exclusão de conta</h2>
-      <p>O donowl oferece um fluxo de autoatendimento para exclusão de conta (Perfil → Configurações → Excluir minha conta). Ao ser solicitada, a exclusão:</p>
+      <p>O donowl oferece um fluxo de autoatendimento para exclusão de conta, nas configurações do perfil no aplicativo. Ao ser solicitada, a exclusão:</p>
       <ul>
         <li>Remove nome, foto de perfil, telefone, gênero, data de nascimento e documentos de verificação enviados;</li>
         <li>Remove os cartões salvos e anonimiza o cadastro no provedor de pagamentos (nome, e-mail e telefone). O CPF e o histórico de cobranças já realizadas permanecem com o provedor, que precisa retê-los para prestar contas ao Banco Central e cumprir obrigações legais e regulatórias, conforme a política de privacidade dele — o donowl não consegue apagá-los;</li>
@@ -332,7 +329,8 @@
 
     <section id="cookies">
       <h2><span class="num">10</span> Cookies e dados de uso</h2>
-      <p><span class="placeholder">[a definir]</span> — esta seção deve ser complementada caso o donowl passe a usar cookies, pixels de rastreamento ou ferramentas de analytics (no site ou no aplicativo), descrevendo quais ferramentas são usadas e como o usuário pode gerenciar suas preferências.</p>
+      <p>O donowl não usa cookies de rastreamento, pixels de publicidade nem ferramentas de análise de uso de terceiros, no aplicativo ou no site.</p>
+      <p>O aplicativo registra, em servidor do próprio donowl, erros técnicos de funcionamento (com a conta em uso no momento, para que o problema possa ser investigado) e usa o serviço de notificações do Firebase (Google) apenas para entregar notificações push, por meio do identificador do aparelho descrito no item 2. Se passarmos a usar cookies, pixels ou ferramentas de análise, esta Política será atualizada antes e o novo aceite será solicitado quando exigido.</p>
     </section>
 
     <section id="menores">
