@@ -235,21 +235,26 @@
             <tr>
               <td>Localização</td>
               <td>Coordenadas geográficas (para busca por proximidade e definição de raio de atendimento)</td>
-              <td>Alunos e professores, com permissão do aparelho</td>
+              <td>Clientes e profissionais, com permissão do aparelho</td>
             </tr>
             <tr>
               <td>Documentos de verificação</td>
               <td>CPF ou CNPJ, nome fantasia, número de registro profissional (ex.: CREF), documento de identidade e comprovantes enviados para aprovação de cadastro</td>
-              <td>Professores e estabelecimentos</td>
+              <td>Profissionais e estabelecimentos</td>
             </tr>
             <tr>
               <td>Dados de pagamento</td>
-              <td>Histórico de transações, valores pagos/recebidos. Os dados do cartão em si são tratados diretamente pelo provedor de pagamentos (Stripe), nunca armazenados pelo donowl</td>
-              <td>Alunos (pagamento) e professores (recebimento)</td>
+              <td>Histórico de transações, valores pagos/recebidos. Os dados do cartão em si são tratados diretamente pelo provedor de pagamentos (Pagar.me, do grupo Stone), nunca armazenados pelo donowl</td>
+              <td>Clientes (pagamento) e profissionais (recebimento)</td>
+            </tr>
+            <tr>
+              <td>Dados de recebimento</td>
+              <td>Para abrir a conta digital de recebimento no provedor de pagamentos (Pagar.me, do grupo Stone): nome, CPF ou CNPJ, data de nascimento, nome da mãe (quando exigido), e-mail, telefone, endereço, faixa de renda mensal, ocupação e dados da conta bancária para saque (o donowl guarda apenas uma máscara com o final da conta). Quando o provedor exige prova de vida, a imagem e a biometria facial são coletadas e tratadas diretamente por ele, e o donowl recebe apenas o resultado da verificação</td>
+              <td>Profissionais e estabelecimentos</td>
             </tr>
             <tr>
               <td>Uso da plataforma</td>
-              <td>Aulas agendadas, mensagens trocadas no chat interno, avaliações publicadas, notificações recebidas</td>
+              <td>Agendamentos, mensagens trocadas no chat interno, avaliações publicadas, notificações recebidas</td>
               <td>Gerado pelo uso do app</td>
             </tr>
             <tr>
@@ -265,10 +270,10 @@
     <section id="finalidade">
       <h2><span class="num">3</span> Para que usamos seus dados</h2>
       <ul>
-        <li>Viabilizar o cadastro, a busca, o agendamento e o pagamento de aulas entre alunos e professores/estabelecimentos;</li>
+        <li>Viabilizar o cadastro, a busca, o agendamento e o pagamento de atendimentos entre clientes e profissionais/estabelecimentos;</li>
         <li>Processar pagamentos e repasses através do provedor de pagamentos;</li>
-        <li>Verificar a identidade e os registros profissionais de professores/estabelecimentos antes de liberar o cadastro;</li>
-        <li>Enviar notificações relacionadas a aulas, mensagens e pagamentos;</li>
+        <li>Verificar a identidade e os registros profissionais dos profissionais/estabelecimentos antes de liberar o cadastro;</li>
+        <li>Enviar notificações relacionadas a agendamentos, mensagens e pagamentos;</li>
         <li>Prevenir fraudes e abusos da plataforma;</li>
         <li>Cumprir obrigações legais e fiscais, incluindo a guarda de registros de transações financeiras pelo prazo exigido pela legislação aplicável;</li>
         <li>Responder a dúvidas e solicitações enviadas ao suporte.</li>
@@ -283,8 +288,8 @@
 
     <section id="compartilhamento">
       <h2><span class="num">5</span> Compartilhamento de dados</h2>
-      <p>Entre aluno e professor, compartilhamos apenas o necessário para a prestação do serviço agendado — nome e foto de perfil, por exemplo. Documentos de verificação (CPF/CNPJ, CREF, identidade) não são exibidos a outros usuários, apenas utilizados internamente para aprovação de cadastro.</p>
-      <p>Compartilhamos dados de pagamento com o provedor de pagamentos (Stripe), estritamente para processar transações e repasses. Podemos também compartilhar dados quando exigido por lei, ordem judicial ou autoridade competente.</p>
+      <p>Entre cliente e profissional, compartilhamos apenas o necessário para a prestação do serviço agendado — nome e foto de perfil, por exemplo. Documentos de verificação (CPF/CNPJ, CREF, identidade) não são exibidos a outros usuários, apenas utilizados internamente para aprovação de cadastro.</p>
+      <p>Compartilhamos dados de pagamento com o provedor de pagamentos (Pagar.me, do grupo Stone), estritamente para processar transações, divisão de valores entre profissional e donowl, estornos e saques. Para profissionais e estabelecimentos, o provedor atua também como controlador dos dados de cadastro de recebimento e da verificação de identidade (inclusive biometria facial, dado pessoal sensível), que ele trata conforme sua própria política. O tratamento desses dados pelo provedor segue a <a href="https://jornada.stone.com.br/politica-de-privacidade">política de privacidade da Stone</a>. Podemos também compartilhar dados quando exigido por lei, ordem judicial ou autoridade competente.</p>
     </section>
 
     <section id="armazenamento">
@@ -294,7 +299,7 @@
 
     <section id="retencao">
       <h2><span class="num">7</span> Por quanto tempo guardamos seus dados</h2>
-      <p>Mantemos os dados pessoais enquanto a conta estiver ativa. Após a exclusão da conta (ver item 9), os dados pessoais identificáveis são removidos ou anonimizados; registros de transações (aulas, pagamentos, avaliações) são preservados, sem identificar o titular, pelo prazo necessário para cumprir obrigações legais e fiscais e para preservar o histórico legítimo da outra parte envolvida na transação.</p>
+      <p>Mantemos os dados pessoais enquanto a conta estiver ativa. Após a exclusão da conta (ver item 9), os dados pessoais identificáveis são removidos ou anonimizados; registros de transações (atendimentos, pagamentos, avaliações) são preservados, sem identificar o titular, pelo prazo necessário para cumprir obrigações legais e fiscais e para preservar o histórico legítimo da outra parte envolvida na transação.</p>
     </section>
 
     <section id="direitos">
@@ -317,11 +322,12 @@
       <p>O donowl oferece um fluxo de autoatendimento para exclusão de conta (Perfil → Configurações → Excluir minha conta). Ao ser solicitada, a exclusão:</p>
       <ul>
         <li>Remove nome, foto de perfil, telefone, gênero, data de nascimento e documentos de verificação enviados;</li>
-        <li>Desativa o acesso à conta (login);</li>
-        <li>Preserva, sem identificar o titular, o histórico de aulas, pagamentos e avaliações já realizados — necessário para manter os registros fiscais da plataforma e a integridade do histórico da outra parte envolvida em cada transação (por exemplo, a avaliação recebida por um professor não desaparece quando o aluno que a escreveu exclui a própria conta).</li>
+        <li>Remove os cartões salvos e anonimiza o cadastro no provedor de pagamentos (nome, e-mail e telefone). O CPF e o histórico de cobranças já realizadas permanecem com o provedor, que precisa retê-los para prestar contas ao Banco Central e cumprir obrigações legais e regulatórias, conforme a política de privacidade dele — o donowl não consegue apagá-los;</li>
+        <li>Desativa o acesso à conta (login). Para o profissional, os valores de atendimentos já realizados que ainda estiverem a receber continuam sendo pagos na conta bancária cadastrada, na agenda de saques dele, pelo provedor de pagamentos; depois da exclusão não é mais possível alterar esses dados pelo aplicativo;</li>
+        <li>Preserva, sem identificar o titular, o histórico de atendimentos, pagamentos e avaliações já realizados — necessário para manter os registros fiscais da plataforma e a integridade do histórico da outra parte envolvida em cada transação (por exemplo, a avaliação recebida por um profissional não desaparece quando o cliente que a escreveu exclui a própria conta).</li>
       </ul>
-      <p>A exclusão pode ser temporariamente bloqueada caso existam pendências ativas na conta — por exemplo, uma aula paga agendada para o futuro, uma assinatura de plano ou de plataforma ainda ativa, ou créditos de pacote ainda não utilizados. Nesses casos, o aplicativo informa exatamente quais pendências precisam ser resolvidas antes da exclusão.</p>
-      <div class="callout">Isso é diferente de um simples <em>apagar tudo</em>: como o donowl processa pagamentos reais entre pessoas, remover completamente o histórico de uma transação prejudicaria a outra parte envolvida nela (o professor perderia o registro da aula que deu, por exemplo) e poderia descumprir a obrigação legal de manter registros fiscais por um determinado período.</div>
+      <p>A exclusão pode ser temporariamente bloqueada caso existam pendências ativas na conta — por exemplo, um agendamento pago para o futuro, uma assinatura de plano ou de plataforma ainda ativa, ou créditos de pacote ainda não utilizados, e, para o profissional, uma reclamação ou uma contestação de pagamento em análise sobre um atendimento seu. Nesses casos, o aplicativo informa exatamente quais pendências precisam ser resolvidas antes da exclusão.</p>
+      <div class="callout">Isso é diferente de um simples <em>apagar tudo</em>: como o donowl processa pagamentos reais entre pessoas, remover completamente o histórico de uma transação prejudicaria a outra parte envolvida nela (o profissional perderia o registro do atendimento que prestou, por exemplo) e poderia descumprir a obrigação legal de manter registros fiscais por um determinado período.</div>
     </section>
 
     <section id="cookies">
