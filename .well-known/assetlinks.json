@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.donowl.app",
+      "sha256_cert_fingerprints": [
+        "37:BD:E4:2A:8F:77:33:9A:97:F3:80:82:08:59:2F:F3:29:8C:A6:8E:A0:B3:51:1A:87:59:2C:2B:53:93:0E:68",
+        "DB:CF:C7:E9:D4:09:14:1A:F5:B1:87:D6:62:E6:86:E6:92:8B:B3:9C:64:64:04:76:E6:5B:A5:BF:AE:62:35:12"
+      ]
+    }
+  }
+]
